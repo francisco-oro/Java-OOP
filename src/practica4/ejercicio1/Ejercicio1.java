@@ -1,4 +1,9 @@
-package practica4;
+/*
+ 	Originally written by Equipo 5 @ Laboratorio de POO Fi-UNAM
+ 	Nov, 2024
+ */
+										
+package practica4.ejercicio1;
 import java.util.*;
 
 public class Ejercicio1 {
@@ -9,6 +14,7 @@ public class Ejercicio1 {
 		int choice;
 		do	
 		{
+			SetInstructions();
 			System.out.println("Enter a new shape index");
 			choice = scanner.nextInt();
 			if(choice == 0) break;
@@ -26,7 +32,7 @@ public class Ejercicio1 {
 		
 	}
 
-	public static double SetOperation(int input, IShape shape) {
+	private static double SetOperation(int input, IShape shape) {
 		switch (input) {
 		case 1:
 			return shape.AreaOfBase();
@@ -39,7 +45,7 @@ public class Ejercicio1 {
 		}
 	}
 
-	public static IShape SetShape(int input) {
+	private static IShape SetShape(int input) {
 		if(input == 1) {
 			System.out.println("Creating a new Cilinder");
 			System.out.println("Radius: ");
@@ -66,7 +72,7 @@ public class Ejercicio1 {
 		}
 	}
 
-	public static void SetInstructions() {
+	private static void SetInstructions() {
 		System.out.println("Welcome to the shape operations program!");
 		System.out.println("0: Exit, 1: Create a cilinder, 2: Create a Pyramid, 3: Create a cube");
 		System.out.println("Please provide the index of the shape you want to create or enter 0 to leave the program");

@@ -1,4 +1,4 @@
-package practica4;
+package practica4.ejercicio1;
 
 public class Piramide implements IShape {
 	private double x, y, z;
