@@ -33,7 +33,7 @@ public class Ejercicio1 {
 	}
 
 	private static double SetOperation(int input, IShape shape) {
-		switch (input) {
+	switch (input) {
 		case 1:
 			return shape.AreaOfBase();
 		case 2:
@@ -54,6 +54,9 @@ public class Ejercicio1 {
 			double height = scanner.nextDouble();
 			return new Cilindro(radius, height);
 		}
+
+
+//	    TODO Volume returns 0 when the input is 8, 10 & 75 -Fix pending
 		else if(input == 2) {
 			System.out.println("Creating a new Pyramid");
 			System.out.println("Base witdh: ");
@@ -62,6 +65,7 @@ public class Ejercicio1 {
 			double base_length = scanner.nextDouble();
 			System.out.println("Height: ");
 			double height = scanner.nextDouble();
+			System.out.println(height);
 			return new Piramide(base_height, base_length, height);
 		}
 		else {

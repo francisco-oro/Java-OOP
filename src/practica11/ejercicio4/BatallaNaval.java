@@ -1,101 +1,122 @@
 package practica11.ejercicio4;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
-public class BatallaNaval {
-    private static final int NUM_TABLEROS = 5;
-    private static final int TAM_TABLERO = 6;
-    private static final int MAX_INTENTOS = 20;
-    private static final int[] TAM_BARCOS = {4, 3, 2, 2};
-    private static final String NOMBRE_ARCHIVO = "juego#FechaHora";
+import java.lang.reflect.Array;
+import java.util.List;
+import java.util.Random;
 
-    private Tablero[] tableros;
-    private int numJuego;
-    private int intentos;
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseButton;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import practica11.ejercicio4.Board.Cell;
+import java.util.*;
 
-    public BatallaNaval() {
-        tableros = new Tablero[NUM_TABLEROS];
-        for (int i = 0; i < NUM_TABLEROS; i++) {
-            tableros[i] = new Tablero(TAM_TABLERO, TAM_BARCOS);
-        }
-        numJuego = 1;
-        intentos = 0;
-    }
 
-    public void jugar() {
-        Scanner scanner = new Scanner(System.in);
-        boolean ganado = false;
-        while (!ganado && intentos < MAX_INTENTOS) {
-            System.out.println("Juego #" + numJuego);
-            System.out.println("Intentos restantes: " + (MAX_INTENTOS - intentos));
-            System.out.println("Tablero de posiciones enemigas:");
-            for (int i = 0; i < NUM_TABLEROS; i++) {
-                System.out.println("Tablero " + (i + 1) + ":");
-                tableros[i].mostrarTablero(false);
+public class BatallaNaval extends Application {
+
+    private boolean running = false;
+    private Board enemyBoard, playerBoard;
+
+    private int shipsToPlace = 5;
+
+    private boolean enemyTurn = false;
+
+    private Random random = new Random();
+
+    private Parent createContent() {
+        BorderPane root = new BorderPane();
+        root.setPrefSize(600, 800);
+
+        root.setRight(new Text("RIGHT SIDEBAR - CONTROLS"));
+
+        enemyBoard = new Board(true, event -> {
+            if (!running)
+                return;
+
+            Cell cell = (Cell) event.getSource();
+            if (cell.wasShot)
+                return;
+
+            enemyTurn = !cell.shoot();
+
+            if (enemyBoard.ships == 0) {
+                System.out.println("YOU WIN");
+                System.exit(0);
             }
-            System.out.println("Ingrese la fila del disparo (1-" + TAM_TABLERO + "):");
-            int fila = scanner.nextInt();
-            System.out.println("Ingrese la columna del disparo (1-" + TAM_TABLERO + "):");
-            int columna = scanner.nextInt();
-            boolean acierto = false;
-            for (Tablero tablero : tableros) {
-                if (tablero.marcarDisparo(fila - 1, columna - 1, )) {
-                    acierto = true;
-                    break;
+
+            if (enemyTurn)
+                enemyMove();
+        });
+
+        playerBoard = new Board(false, event -> {
+            if (running)
+                return;
+
+            Cell cell = (Cell) event.getSource();
+            if (playerBoard.placeShip(new Ship(shipsToPlace, event.getButton() == MouseButton.PRIMARY), cell.x, cell.y)) {
+                if (--shipsToPlace == 0) {
+                    startGame();
                 }
             }
-            intentos++;
-            if (acierto) {
-                System.out.println("¡Acierto!");
-            } else {
-                System.out.println("¡Fallaste!");
-            }
-            for (Tablero tablero : tableros) {
-                tablero.contarBarcosHundidos();
-            }
-            ganado = true;
-            for (Tablero tablero : tableros) {
-                if (!tablero.todosHundidos()) {
-                    ganado = false;
-                    break;
-                }
-            }
-        }
-        if (ganado) {
-            System.out.println("¡Ganaste!");
-        } else {
-            System.out.println("¡Perdiste!");
-        }
-        guardarArchivo(ganado);
+        });
+
+        VBox vbox = new VBox(50, enemyBoard, playerBoard);
+        vbox.setAlignment(Pos.CENTER);
+
+        root.setCenter(vbox);
+
+        return root;
     }
 
-    private void guardarArchivo(boolean ganado) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-        LocalDateTime fechaHora = LocalDateTime.now();
-        String nombreArchivo = NOMBRE_ARCHIVO.replace("#", String.valueOf(numJuego))
-                .replace("FechaHora", fechaHora.format(formatter));
-        File archivo = new File(nombreArchivo);
-        try {
-            FileWriter escritor = new FileWriter(archivo);
-            escritor.write("Tablero de posiciones enemigas:\n");
-            for (int i = 0; i < NUM_TABLEROS; i++) {
-                escritor.write("Tablero " + (i + 1) + ":\n");
-                escritor.write(tableros[i].toString());
+    private void enemyMove() {
+        while (enemyTurn) {
+            int x = random.nextInt(10);
+            int y = random.nextInt(10);
+
+            Cell cell = playerBoard.getCell(x, y);
+            if (cell.wasShot)
+                continue;
+
+            enemyTurn = cell.shoot();
+
+            if (playerBoard.ships == 0) {
+                System.out.println("YOU LOSE");
+                System.exit(0);
             }
-            escritor.write("Turnos jugados: " + intentos + "\n");
-            escritor.write("Resultado: " + (ganado ? "Ganado" : "Perdido") + "\n");
-            escritor.close();
-        } catch (IOException e) {
-            System.out.println("Error al guardar archivo.");
         }
+    }
+
+    private void startGame() {
+        // place enemy ships
+        int type = 5;
+
+        while (type > 0) {
+            int x = random.nextInt(10);
+            int y = random.nextInt(10);
+
+            if (enemyBoard.placeShip(new Ship(type, Math.random() < 0.5), x, y)) {
+                type--;
+            }
+        }
+
+        running = true;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Scene scene = new Scene(createContent());
+        primaryStage.setTitle("Batalla naval");
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
-        BatallaNaval juego = new BatallaNaval();
-        juego.jugar();
+        launch(args);
     }
 }

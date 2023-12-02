@@ -10,5 +10,4 @@ public class Ejercicio3 {
 		// TODO Auto-generated method stub
 		Ventana ventana = new Ventana();
 	}
-
 }
