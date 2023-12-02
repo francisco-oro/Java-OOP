@@ -1,7 +1,6 @@
 package practica4.ejercicio4;
 
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
 
 public class Mesero {

@@ -13,7 +13,7 @@ class Contacto {
 
     // Constructor de la clase
     public Contacto(String nombre, String apellido, String telefono, String correo, String direccion) {
-        this.nombre = nombre;
+        this.nombre = nombre.trim();
         this.apellido = apellido;
         this.telefono = telefono;
         this.correo = correo;

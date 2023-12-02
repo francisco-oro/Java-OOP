@@ -38,7 +38,6 @@ class Ventana extends JFrame implements ActionListener {
      botonEliminar = new JButton("Eliminar");
      botonVerTodos = new JButton("Ver todos");
      botonSalir = new JButton("Salir");
-
      // Inicializar el objeto de la clase Agenda
      agenda = new Agenda();
 

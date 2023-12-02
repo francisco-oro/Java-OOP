@@ -11,13 +11,9 @@ import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.imageio.stream.FileImageOutputStream;
 
 /**
  * 
@@ -32,7 +28,6 @@ public class Ventana extends JFrame implements ActionListener {
 	private JButton botonCuenta;
 	private JButton botonSalir;
 	private Mesero mesero;
-	
 	/**
 	 * @throws HeadlessException
 	 */
@@ -46,6 +41,7 @@ public class Ventana extends JFrame implements ActionListener {
 		botonEntregar = new JButton("Entregar");
 		botonCuenta = new JButton("Cuenta");
 		botonSalir = new JButton("Salir");
+
 		
 		mesero = new Mesero();
 		
@@ -75,7 +71,7 @@ public class Ventana extends JFrame implements ActionListener {
 		this.setVisible(true);
 		
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object fuente = e.getSource();
@@ -102,9 +98,57 @@ public class Ventana extends JFrame implements ActionListener {
 				JComboBox<String> comboPlatoFuerte = new JComboBox<String>(new String[] {comensal.getPlatoFuerte()});
 				JLabel labelPostre = new JLabel("Postre:");
 				JComboBox<String> comboPostre = new JComboBox<String>(new String[] {comensal.getPostre()});
-			}
-			
-		}
-	}
 
+				panelDatos.add(labelNombre);
+				panelDatos.add(comboNombre);
+				panelDatos.add(labelBebida);
+				panelDatos.add(comboBebida);
+				panelDatos.add(labelEntrada);
+				panelDatos.add(comboEntrada);
+				panelDatos.add(labelGuarnicion);
+				panelDatos.add(comboGuarnicion);
+				panelDatos.add(labelPlatoFuerte);
+				panelDatos.add(comboPlatoFuerte);
+				panelDatos.add(labelPostre);
+				panelDatos.add(comboPostre);
+
+				layout.setColumns(6);
+				layout.setColumns(2);
+			} else {
+				JLabel labelNombre = new JLabel("Nombre:");
+				JComboBox<String> comboNombre = new JComboBox<String>(new String[] {comensal.getNombre()});
+				JLabel labelBebida = new JLabel("Bebida:");
+				JComboBox<String> comboBebida = new JComboBox<String>(new String[] {"Agua", "Refresco", "Jugo"});
+				JLabel labelEntrada = new JLabel("Entrada:");
+				JComboBox<String> comboEntrada = new JComboBox<String>(new String[] {"Ensalada", "Sopa", "Queso"});
+				JLabel labelGuarnicion = new JLabel("Guarnicion:");
+				JComboBox<String> comboGuarnicion = new JComboBox<String>(new String[] {"Arroz", "Papas", "Verduaras"});
+				JLabel labelPlatoFuerte = new JLabel("Plato Fuerte:");
+				JComboBox<String> comboPlatoFuerte = new JComboBox<String>(new String[] {"Pollo", "Carne", "Pescado"});
+				JLabel labelPostre = new JLabel("Postre:");
+				JComboBox<String> comboPostre = new JComboBox<String>(new String[] {"Gelatina", "Pastel", "Helado"});
+
+                panelDatos.add(labelNombre);
+                panelDatos.add(comboNombre);
+                panelDatos.add(labelBebida);
+                panelDatos.add(comboBebida);
+                panelDatos.add(labelEntrada);
+                panelDatos.add(comboEntrada);
+                panelDatos.add(labelGuarnicion);
+                panelDatos.add(comboGuarnicion);
+                panelDatos.add(labelPlatoFuerte);
+                panelDatos.add(comboPlatoFuerte);
+                panelDatos.add(labelPostre);
+                panelDatos.add(comboPostre);
+
+                layout.setRows(6);
+                layout.setColumns(2);
+                panelDatos.setLayout(layout);
+                panelDatos.revalidate();
+                panelDatos.repaint();
+			}
+        }
+			
+	}
 }
+
