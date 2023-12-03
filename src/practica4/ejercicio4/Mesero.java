@@ -1,115 +1,94 @@
 package practica4.ejercicio4;
 
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
+import java.util.*;
+
 
 public class Mesero {
-	private ArrayList<Comensal> comensales;
-	public Mesero() {
-		comensales = new ArrayList<Comensal>();
-	}
-	
-	public void tomarOrden(Comensal comensal)
-	{
-		comensales.add(comensal);
-	}
-	
-	public Comensal buscarComensal(String nombre)
-	{
-		for(Comensal comensal : comensales)
-		{
-			if(comensal.getNombre().equals(nombre))
-			{
-				return comensal;
-			}
-		}
-		return null;
-	}
-	
-	public void entregarPlatillos(String nombre)
-	{
-		Comensal comensal = buscarComensal(nombre);
-		
-		if(comensal != null)
-		{
-			JOptionPane.showMessageDialog(null, "Se le entregan los siguientes platillos: \n" + comensal.toString());
-		} else {
-			JOptionPane.showMessageDialog(null, "No se encontró ningún comensal con ese nombre" + comensal.toString());
-		}
-	}
-	
-	public void entregarCuenta(String nombre)
-	{
-		Comensal comensal = buscarComensal(nombre);
-		
-		if(comensal != null)
-		{
-			double total = 0;
-			switch(comensal.getBebida())
-			{
-				case "Agua":
-					total +=10;
-					break;
-				case "Refresco":
-					total += 15;
-					break;
-				case "Jugo":
-					total += 20;
-					break;
-			}
-			switch(comensal.getEntrada())
-			{
-			case "Ensalada":
-				total +=25;
-				break;
-			case "Sopa":
-				total += 30;
-				break;
-			case "Queso":
-				total += 35;
-				break;
-			}
-			switch(comensal.getGuarnicion())
-			{
-			case "Arroz":
-				total += 40;
-				break;
-			case "Papas":
-				total += 45;
-				break;
-			case "Verduras":
-				total += 50;
-				break;
-			}
-			switch(comensal.getPlatoFuerte())
-			{
-			case "Pollo":
-				total += 55;
-				break;
-			case "Carne":
-				total += 60;
-				break;
-			case "Pescado":
-				total += 65;
-				break;
-			}
-			switch(comensal.getPostre())
-			{
-			case "Gelatina":
-				total += 70;
-				break;
-			case "Pastel":
-				total += 75;
-				break;
-			case "Helado":
-				total += 80;
-				break;
-			}
-			
-			JOptionPane.showMessageDialog(null, "El total a pagar es: $" + total);
-			comensales.remove(comensal); 
-		} else {
-			JOptionPane.showMessageDialog(null, "No se encontró ningún comensal con ese nombre");
-		}
-	}
+    private String nombre;
+
+    public Mesero(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void tomarOrden(Comensal comensal)
+    {
+        int option, cantidad;
+        List<Platillo> nuevosPlatillos;
+        Scanner scanner = new Scanner(System.in);
+
+        Map<Integer, Platillo> nuevaOrden = new HashMap<Integer, Platillo>(5);
+
+        System.out.println("Ingrese una bebida:");
+        nuevosPlatillos = Ejercicio4.Platillos.get(1);
+        System.out.println("Ingrese la cantidad:");
+        cantidad = scanner.nextInt();
+
+        nuevaOrden.put(cantidad, nuevosPlatillos.get(0));
+
+        System.out.println("Ingrese una entrada");
+        option = scanner.nextInt();
+        System.out.println("Ingrese la cantidad:");
+        cantidad = scanner.nextInt();
+        nuevaOrden.put(cantidad, Ejercicio4.getPlatillos().get(2).get(0));
+
+        System.out.println("Ingrese un plato fuerte");
+        option = scanner.nextInt();
+        System.out.println("Ingrese la cantidad:");
+        cantidad = scanner.nextInt();
+        nuevaOrden.put(cantidad, Ejercicio4.getPlatillos().get(3).get(option));
+
+        System.out.println("Ingrese una guarncición");
+        option = scanner.nextInt();
+        System.out.println("Ingrese la cantidad:");
+        cantidad = scanner.nextInt();
+        nuevaOrden.put(cantidad, Ejercicio4.getPlatillos().get(4).get(option));
+
+        System.out.println("Ingrese un postre");
+        option = scanner.nextInt();
+        System.out.println("Ingrese la cantidad:");
+        cantidad = scanner.nextInt();
+        nuevaOrden.put(cantidad, Ejercicio4.getPlatillos().get(5).get(option));
+
+
+
+
+        Orden orden = new Orden(nuevaOrden);
+        comensal.setOrden(orden);
+    }
+
+    public void prepararOrden(Orden orden)
+    {
+        System.out.println("Su orden está siendo preparada...");
+
+        for (Map.Entry<Integer, Platillo> platillo:
+             orden.getPlatillos().entrySet()) {
+            System.out.println("Preparando " + platillo.getKey() + " " + platillo.getValue());
+            System.out.println("Hecho");
+        }
+    }
+
+    public void entregarPlatillos(Comensal comensal)
+    {
+        Orden orden = comensal.getOrden();
+        for (Map.Entry<Integer, Platillo> platillo :
+                orden.getPlatillos().entrySet()) {
+            System.out.println("Sirviendo " + platillo.getValue().getClasificacion() + " : " + platillo.getKey() + " " + platillo.getValue().getNombre());
+        }
+
+        System.out.println("Todos los platillos han sido servidos. Disfrute sua comida");
+    }
+
+    public void entregarCuenta(Comensal comensal)
+    {
+        Orden orden = comensal.getOrden();
+        System.out.println("El total a pagar es: " + orden.getTotal());
+    }
 }
