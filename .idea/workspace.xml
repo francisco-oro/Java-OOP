@@ -2,24 +2,13 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/practica11/ejercicio4/Tablero.java" line="5" />
-    <bookmark url="file://$PROJECT_DIR$/src/practica4/ejercicio4/Mesero.java" line="81" />
-    <bookmark url="file://$PROJECT_DIR$/src/practica4/ejercicio4/Mesero.java" line="33" />
+    <bookmark url="file://$PROJECT_DIR$/src/practica4/ejercicio4/Mesero.java" line="80" />
+    <bookmark url="file://$PROJECT_DIR$/src/practica4/ejercicio4/Mesero.java" line="31" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d3405e-2e6d-4ba9-b136-3b69be3cddff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practica11/SuperTiendaPOS/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practica11/SuperTiendaPOS/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practica11/SuperTiendaPOS/SuperTiendaPOS.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practica11/SuperTiendaPOS/src/com/supertiendafi/Home.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practica11/SuperTiendaPOS/src/com/supertiendafi/Home.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practica4/ejercicio4/Orden.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/practica4/ejercicio4/Platillo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practica4/ejercicio4/Comensal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practica4/ejercicio4/Comensal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/practica4/ejercicio4/Ejercicio4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practica4/ejercicio4/Ejercicio4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/practica4/ejercicio4/Mesero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practica4/ejercicio4/Mesero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/practica4/ejercicio4/Ventana.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,14 +48,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="12961" />
+          <entry key="java" value="13005" />
           <entry key="md" value="395" />
           <entry key="txt" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12961" />
+          <entry key="JAVA" value="13005" />
           <entry key="Markdown" value="395" />
           <entry key="PLAIN_TEXT" value="44" />
         </counts>
@@ -78,12 +67,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/practica4/ejercicio4/Ejercicio4.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="21" />
+            <state relative-caret-position="200">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
+                <element signature="e#1425#1426#0" expanded="true" />
+                <element signature="e#1457#1458#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/practica4/ejercicio4/Mesero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+            <state relative-caret-position="155">
+              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
               <folding>
                 <element signature="e#114#115#0" expanded="true" />
                 <element signature="e#150#151#0" expanded="true" />
@@ -329,13 +318,6 @@
               <item name="PooLabsDemo" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="practica4" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ejercicio3" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="PooLabsDemo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="PooLabsDemo" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="practica4" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="ejercicio4" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
@@ -347,7 +329,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1701574409048" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1701575335103" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../superTiendaFi" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15392354" />
@@ -467,12 +449,12 @@
       <updated>1701356917959</updated>
       <workItem from="1701356924133" duration="7431000" />
       <workItem from="1701386650499" duration="13526000" />
-      <workItem from="1701492624719" duration="33385000" />
+      <workItem from="1701492624719" duration="34352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54342000" />
+    <option name="totallyTimeSpent" value="55309000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,10 +475,10 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Structure" order="5" sideWeight="0.5008157" side_tool="true" weight="0.18139842" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49918434" visible="true" weight="0.18139842" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49918434" visible="true" weight="0.18139842" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32932165" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3501094" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3501094" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934355" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -784,22 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/practica4/ejercicio4/Orden.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding>
-            <element signature="e#140#159#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/practica4/ejercicio4/Comensal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -821,20 +787,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/practica4/ejercicio4/Ejercicio4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="21" />
+        <state relative-caret-position="200">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/practica4/ejercicio4/Orden.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="e#140#159#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#183#184#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/practica4/ejercicio4/Mesero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+        <state relative-caret-position="155">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
           <folding>
             <element signature="e#114#115#0" expanded="true" />
             <element signature="e#150#151#0" expanded="true" />

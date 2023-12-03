@@ -21,23 +21,22 @@ public class Mesero {
     public void tomarOrden(Comensal comensal)
     {
         int option, cantidad;
-        List<Platillo> nuevosPlatillos;
         Scanner scanner = new Scanner(System.in);
 
         Map<Integer, Platillo> nuevaOrden = new HashMap<Integer, Platillo>(5);
 
         System.out.println("Ingrese una bebida:");
-        nuevosPlatillos = Ejercicio4.Platillos.get(1);
+        option = scanner.nextInt();
         System.out.println("Ingrese la cantidad:");
         cantidad = scanner.nextInt();
+        nuevaOrden.put(cantidad, Ejercicio4.getPlatillos().get(1).get(option));
 
-        nuevaOrden.put(cantidad, nuevosPlatillos.get(0));
 
         System.out.println("Ingrese una entrada");
         option = scanner.nextInt();
         System.out.println("Ingrese la cantidad:");
         cantidad = scanner.nextInt();
-        nuevaOrden.put(cantidad, Ejercicio4.getPlatillos().get(2).get(0));
+        nuevaOrden.put(cantidad, Ejercicio4.getPlatillos().get(2).get(option));
 
         System.out.println("Ingrese un plato fuerte");
         option = scanner.nextInt();
