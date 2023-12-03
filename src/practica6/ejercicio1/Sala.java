@@ -1,6 +1,6 @@
 package practica6.ejercicio1;
 
-import java.util.List;
+import java.util.*;
 
 public class Sala {
     private List<Funcion> funciones = new ArrayList<Funcion>();
@@ -30,4 +30,5 @@ public class Sala {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+    
 }

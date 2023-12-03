@@ -4,13 +4,16 @@ import java.util.List;
 
 public class Ticket {
     private double total;
-    private List<Integer> asientos;
+    private Integer[] asientos;
     private int codigo;
     private static int currentTicketCode = 0;
+    private Funcion funcion;
 
-    public Ticket(List<Integer> asientos, int codigo) {
-        this.asientos = asientos;
+    public Ticket(int asientos, Funcion funcion) {
+        this.asientos = funcion.obtenerAsientos(asientos);
         this.codigo = currentTicketCode++;
+        this.total = asientos * funcion.getCost();
+        this.funcion = funcion;
     }
 
     public double getTotal() {
@@ -21,11 +24,11 @@ public class Ticket {
         this.total = total;
     }
 
-    public List<Integer> getAsientos() {
+    public Integer[] getAsientos() {
         return asientos;
     }
 
-    public void setAsientos(List<Integer> asientos) {
+    public void setAsientos(Integer[] asientos) {
         this.asientos = asientos;
     }
 

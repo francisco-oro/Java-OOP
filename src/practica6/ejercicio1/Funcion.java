@@ -22,6 +22,15 @@ public class Funcion {
         this.sala = sala;
     }
 
+    public Integer[] obtenerAsientos(int quantity){
+        Integer[] asientos = new Integer[quantity];
+        for (int i = 0; i < quantity; i++) {
+            asientos[i] = asientosDisponibles--;
+        }
+
+        return asientos;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -52,5 +61,13 @@ public class Funcion {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 }

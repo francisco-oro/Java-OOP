@@ -16,10 +16,54 @@ public class User {
         this.email = email;
     }
 
-    public boolean buyTickets(int number, Funcion function)
+    public boolean buyTickets(int asientos, Funcion function)
     {
-        if (number > 4 || number < 1)
-            return false;
-        this.tickets.add()
+        if (asientos <= 4 && asientos >= 1)
+        {
+            Ticket newTicket = new Ticket(asientos,function)
+            this.tickets.add(newTicket);
+            return true;
+        }
+        return true;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 }
