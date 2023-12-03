@@ -6,9 +6,9 @@ public class Agenda {
     private User user;
     private int maxContacts;
 
-    public Agenda() {
+    public Agenda(User user) {
         contacts = new ArrayList<Contact>();
-        user = new User("John Doe", "johndoe@example.com");
+        this.user = user;
     }
 
     public void addContact(Contact contact) {
@@ -29,7 +29,7 @@ public class Agenda {
         System.out.print("Ingrese su apellido: ");
         user.setSurname(sc.nextLine());
         System.out.print("Ingrese su nickname: ");
-        user.setNickname(sc.nextLine());
+        user.setUsername(sc.nextLine());
         System.out.print("Ingrese su teléfono: ");
         user.setPhone(sc.nextLine());
         System.out.print("Ingrese su correo: ");

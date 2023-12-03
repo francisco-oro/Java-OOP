@@ -7,14 +7,16 @@ class User {
     private String surname;
     private String username;
     private String email;
+    private String phone;
     private List<Contact> contacts;
     private Suscription currentSuscription;
 
 
 
-    public User(String name, String email) {
+    public User(String name, String email, Suscription suscription) {
         this.name = name;
         this.email = email;
+        this.currentSuscription = suscription;
         this.contacts = new ArrayList<>();
     }
 
@@ -70,4 +72,31 @@ class User {
         this.surname = surname;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
+    public Suscription getCurrentSuscription() {
+        return currentSuscription;
+    }
+
+    public void setCurrentSuscription(Suscription currentSuscription) {
+        this.currentSuscription = currentSuscription;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }
